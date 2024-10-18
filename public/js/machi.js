@@ -4,12 +4,16 @@ listOfShuntsu = [
     [5, 6, 7], [6, 7, 8],
 ];
 
-const elemInputPaishi = document.getElementById("inputPaishi");
-elemInputPaishi.addEventListener("input", (event) => {
+document.getElementById("inputPaishi").addEventListener("input", (event) => {
     document.getElementById("countOfPaiInInputPaishi").textContent = event.target.value.length + "枚";
 });
 // 初期値
 document.getElementById("countOfPaiInInputPaishi").textContent = document.getElementById("inputPaishi").value.length + "枚";
+
+const onClickPai = (num) => {
+    document.getElementById("inputPaishi").value += String(num);
+    document.getElementById("countOfPaiInInputPaishi").textContent = document.getElementById("inputPaishi").value.length + "枚";
+}
 
 const onClick = () => {
     // 正規表現
